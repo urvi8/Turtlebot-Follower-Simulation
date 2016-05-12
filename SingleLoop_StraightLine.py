@@ -81,14 +81,14 @@ def trial():
 			rotate = rotate + 360
 	
 		if rotate < 180:
-			turn_r.angular.z = 1.2*rotate/180
-			turn_r.linear.x = 0.75*phi
+			turn_r.angular.z = rotate/180
+			turn_r.linear.x = 0.25*phi
 
 			pub.publish(turn_r)
 
 		else:
-			turn.angular.z = -1.2*((360-rotate)/180)
-			turn.linear.x = 0.75*phi
+			turn.angular.z = -((360-rotate)/180)
+			turn.linear.x = 0.25*phi
 
 			pub.publish(turn)
 	
